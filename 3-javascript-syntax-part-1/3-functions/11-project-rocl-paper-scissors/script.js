@@ -1,10 +1,10 @@
 // Get User Choice
 const getUserChoice = (userInput = userInput.toLowecase()) => {
   if (
-    userInput === "rock" ||
-    userInput === "paper" ||
-    userInput === "scissor" ||
-    userInput === "bomb"
+    userInput === "pedra" ||
+    userInput === "papel" ||
+    userInput === "tesoura" ||
+    userInput === "bomba"
   ) {
     return userInput;
   } else {
@@ -16,51 +16,51 @@ const getUserChoice = (userInput = userInput.toLowecase()) => {
 const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * 3);
   if (randomNumber === 0) {
-    return "rock";
+    return "pedra";
   } else if (randomNumber === 1) {
-    return "paper";
+    return "papel";
   } else if (randomNumber === 2) {
-    return "scissor";
+    return "tesoura";
   }
 };
 
 // Determine Winner
 const determineWinner = (userChoice, computerChoice) => {
   if (userChoice === computerChoice) {
-    return "The game was tie";
+    return "Jogo empatado";
   }
-  if (userChoice === "rock") {
-    if (computerChoice === "paper") {
-      return "The computer won!";
+  if (userChoice === "pedra") {
+    if (computerChoice === "papel") {
+      return "O computador venceu!";
     } else {
-      return "You won";
+      return "Você venceu";
     }
   }
-  if (userChoice === "paper") {
-    if (computerChoice === "scissor") {
-      return "The computer won!";
+  if (userChoice === "papel") {
+    if (computerChoice === "tesoura") {
+      return "O computador venceu!";
     } else {
-      return "You won";
+      return "Você venceu";
     }
   }
-  if (userChoice === "scissor") {
-    if (computerChoice === "rock") {
-      return "The computer won!";
+  if (userChoice === "tesoura") {
+    if (computerChoice === "pedra") {
+      return "O computador venceu!";
     } else {
-      return "You won";
+      return "Você venceu";
     }
   }
-  if (userChoice === "bomb") {
-    return "The bomb destroy everything!";
+  if (userChoice === "bomba") {
+    return "A bomba destrói tudo!";
   }
 };
 
 // The Game
 const playGame = () => {
-  const userChoice = getUserChoice("scissor");
+  const userChoice = getUserChoice("tesoura");
   const computerChoice = getComputerChoice();
-  console.log("You Choose: " + userChoice);
-  console.log("Computer Choose: " + computerChoice);
+  console.log("Você escolheu: " + userChoice);
+  console.log("O computador escolheu: " + computerChoice);
   console.log(determineWinner(userChoice, computerChoice));
 };
 playGame();
