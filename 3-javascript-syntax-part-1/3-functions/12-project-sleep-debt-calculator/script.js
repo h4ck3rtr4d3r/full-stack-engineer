@@ -1,66 +1,49 @@
-// Get User Choice
-const getUserChoice = (userInput = userInput.toLowecase()) => {
-  if (
-    userInput === "rock" ||
-    userInput === "paper" ||
-    userInput === "scissor" ||
-    userInput === "bomb"
-  ) {
-    return userInput;
-  } else {
-    console.log("Error!");
+// Get Sleep Hours
+const getSleepHours = (day) => {
+  if (day === "monday") {
+    return 6;
+  } else if (day === "tuesday") {
+    return 7;
+  } else if (day === "wednesday") {
+    return 8;
+  } else if (day === "thursday") {
+    return 5;
+  } else if (day === "friday") {
+    return 9;
+  } else if (day === "saturday") {
+    return 4;
+  } else if (day === "sunday") {
+    return 8;
   }
 };
 
-// Get Computer Choice
-const getComputerChoice = () => {
-  const randomNumber = Math.floor(Math.random() * 3);
-  if (randomNumber === 0) {
-    return "rock";
-  } else if (randomNumber === 1) {
-    return "paper";
-  } else if (randomNumber === 2) {
-    return "scissor";
-  }
+// Actual Sleep Hours
+const getActualSleepHours = () =>
+  getSleepHours("monday") +
+  getSleepHours("tuesday") +
+  getSleepHours("wednesday") +
+  getSleepHours("thursday") +
+  getSleepHours("friday") +
+  getSleepHours("saturday") +
+  getSleepHours("sunday");
+
+// Ideal Sleep Hours
+const getIdealSleepHours = () => {
+  const idealHours = 8;
+  return idealHours * 7;
 };
 
-// Determine Winner
-const determineWinner = (userChoice, computerChoice) => {
-  if (userChoice === computerChoice) {
-    return "The game was tie";
-  }
-  if (userChoice === "rock") {
-    if (computerChoice === "paper") {
-      return "The computer won!";
-    } else {
-      return "You won";
-    }
-  }
-  if (userChoice === "paper") {
-    if (computerChoice === "scissor") {
-      return "The computer won!";
-    } else {
-      return "You won";
-    }
-  }
-  if (userChoice === "scissor") {
-    if (computerChoice === "rock") {
-      return "The computer won!";
-    } else {
-      return "You won";
-    }
-  }
-  if (userChoice === "bomb") {
-    return "The bomb destroy everything!";
-  }
-};
+// Sleep Debt
+const calculateSleepDebt = () => {
+  const actualSleepHours = getActualSleepHours();
+  const idealHours = getIdealSleepHours();
 
-// The Game
-const playGame = () => {
-  const userChoice = getUserChoice("scissor");
-  const computerChoice = getComputerChoice();
-  console.log("You Choose: " + userChoice);
-  console.log("Computer Choose: " + computerChoice);
-  console.log(determineWinner(userChoice, computerChoice));
+  if (actualSleepHours === idealHours) {
+    console.log("You got the perfect amount of sleep");
+  } else if (actualSleepHours > idealHours) {
+    console.log("You got more sleep than needed");
+  } else if (actualSleepHours < idealHours) {
+    console.log("you should get some rest");
+  }
 };
-playGame();
+calculateSleepDebt();
