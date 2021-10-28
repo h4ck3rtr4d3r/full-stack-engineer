@@ -14,3 +14,27 @@ console.log(typeof countString);
  * First, the code block after the do keyword is executed once. Then the condition is evaluated. If the condition evaluates to true, the block will execute again. The looping stops whn the condition evalutes to false.
  * Unlike the while loop, do...while will run at least once whether or not the condition evaluates to true.
  */
+
+// Example:
+
+const firstMessage = "I will print!";
+const secondMessage = "I will not print!";
+
+// A do while with a stopping condition that evaluates to false
+do {
+  console.log(firstMessage);
+} while (true === false);
+
+// A while loop with a stopping condition that evaluates to false
+while (true === false) {
+  console.log(secondMessage);
+}
+
+// Exercise
+let cupsOfSugarNeeded = 7;
+let cupsAdded = 0;
+
+do {
+  console.log(cupsAdded);
+  cupsAdded++;
+} while (cupsAdded < cupsOfSugarNeeded);
