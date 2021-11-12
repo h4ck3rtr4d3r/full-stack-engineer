@@ -1,6 +1,6 @@
 /**
  * Destructed Assignment
- * We often want to extract key-value pairs from objects and sabe hem as variables. Take for example the following object:
+ * We often want to extract key-value pairs from objects and set them as variables. Take for example the following object:
  */
 
 const vampire = {

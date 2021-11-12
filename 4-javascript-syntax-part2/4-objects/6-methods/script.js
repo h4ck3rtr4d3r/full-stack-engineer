@@ -1,6 +1,6 @@
 /**
  * When the data stored on an object is a function we call that a method. A method is what an object does.
- * For example console is a global JavaScript object and .log() is a mehod on that object. Mah is also a global JavaScript object and .floor() is a method on it.
+ * For example console is a global JavaScript object and .log() is a mehod on that object. Math is also a global JavaScript object and .floor() is a method on it.
  * We can include methods in our object literal by creating ordinary, comma-separated key-value pairs. The key serves as our method's name, while the value is an anonymous function expression
  */
 
