@@ -15,5 +15,28 @@ const busy = announceThatIAmDoingImportantWork;
 busy(); // This function call barely takes any space!
 
 /**
- *
+ busy is a variable that holds a reference to our original function. If we could look up the address in memory of busy and the address in memory of announceThatIamDoingImportantWork they would point to the same place. Our new busy()function can be invoked with parentheses as if that was the name we originally gave our funtion.
+
+ Notice how we assign announceThatIamDoingImportantWork without parentheses as the value to the busy variable. We want to assign the value of the function itself, not the value it returns when invoked.
+ 
+ In JavaScript, functions are first class objects. This means that, like other objects you've encountered, JavaScript functions can have properties and methods.
+
+ Since functions are type of object, they have properties such as .length and .name and methods such as .toString(). 
+
+ Functions are special because we can invoke them, but we can still treat them like any other type of data.
+ 
  */
+
+// Exercise
+const checkThatTwoPlusTwoEqualsFourAMillionTimes = () => {
+  for (let i = 1; i <= 100000; i++) {
+    if (2 + 2 != 4) {
+      console.log("Something has gone very wrong :(");
+    }
+  }
+};
+
+const is2p2 = checkThatTwoPlusTwoEqualsFourAMillionTimes;
+is2p2();
+console.log;
+console.log(is2p2.name);
