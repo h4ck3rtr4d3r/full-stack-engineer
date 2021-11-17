@@ -1,5 +1,5 @@
 /*
-The secondo iterator we're going to cover is .map(). When .map() is called on an array, it  takes an argument of a callback function and returns a new array! Take a look at an example of calling .map():
+The second iterator we're going to cover is .map(). When .map() is called on an array, it  takes an argument of a callback function and returns a new array! Take a look at an example of calling .map():
 */
 
 const number = [1, 2, 3, 4, 5];
