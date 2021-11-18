@@ -29,11 +29,13 @@ const summedNums = numbers.reduce((accumulator, currentValue) => {
 console.log(summedNums); // output: 117
 
 // Exercise
-const newNumbers = [1,3,5,7]
+const newNumbers = [1, 3, 5, 7];
 
 const newSum = newNumbers.reduce((accumulator, currentValue) => {
-  return accumulator + currentValue
-})
+  console.log('The value of accumulator: ', accumulator);
+  console.log('The value of currentValue: ', currentValue);
+  return accumulator + currentValue;
+}, 10);
 
-console.log(`The value of accumulato: `, accumulator);
-console.log(`The value of currentValue: `, currentValue);
+console.log(newSum);
+
